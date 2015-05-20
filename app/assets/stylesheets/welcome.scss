@@ -1,25 +1,13 @@
-h1 {
-  color: red;
-}
-
-p#index-title {
+.social-btn {
+   display: block;
+   height: 75px;
+   width: 125px;
+   background: #FFFF00;
+  
+  
+   color: rgba (0,0,0);
    text-align: center;
-   font-size: 15px;
-   color: blue;
+   font: bold 2em/25px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+   
  }
 
- .posts {
-    border: solid;
-    margin: 5px;
-    padding: 5px;
-    height: 200px;
-
- }
-
- section {
-   background: #5998ff;
-   border-style: solid;
-   border-width: 8px;
-   margin: 5px 5px 5px 5px;
-   padding: 5px 5px 5px 5px;
- }
