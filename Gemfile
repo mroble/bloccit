@@ -53,6 +53,12 @@ group :development, :test do
   gem 'spring'
 end
 
-# #Installing this bc BlocOverlords said so
+#Installing this bc BlocOverlords said so
 gem 'bootstrap-sass'
+
+#Install Pry
+gem 'pry-rails', :group => :development
+
+#Install fake
+gem 'faker'
 
