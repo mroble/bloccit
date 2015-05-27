@@ -1,4 +1,4 @@
- require 'faker'
+require 'faker'
 
 unique_post="This is a unique post"
 unique_comment="This is a unique comment on a random post"
