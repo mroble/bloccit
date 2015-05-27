@@ -1,4 +1,7 @@
- require 'faker'
+require 'faker'
+
+unique_post="This is a unique post"
+unique_comment="This is a unique comment on a random post"
  
  # Create Posts
  50.times do
@@ -8,25 +11,38 @@
    )
  end
  posts = Post.all
+
+unless Post.where(title: unique_post).exists?
+ Post.create!(
+     title:  unique_post,
+     body:   "Which contains a unique message"
+   )
+  end
+      
+posts = Post.all
+
+
  
  # Create Comments
- 100.times do
+
+100.times do
    Comment.create!(
      post: posts.sample,
      body: Faker::Lorem.paragraph
    )
  end
+
+
+unless Comment.where(body: unique_comment).exists?
+  Comment.create!(
+     post:  posts.sample,
+     body:  unique_comment
+   )
+end
+
  
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
 
-post_attributes = [
-  { title: "Sample Title 1", body: "Sample body 1" },
-  { title: "Sample Title 2", body: "Sample body 2" },
-  { title: "Sample Title 3", body: "Sample body 3" },
-]
 
-post_attributes.each do |attributes|
-  Post.where(attributes).first_or_create
-end
