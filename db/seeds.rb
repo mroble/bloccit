@@ -1,8 +1,5 @@
-<<<<<<< HEAD
- require 'faker'
-=======
 require 'faker'
->>>>>>> chckpt-27-assignment
+
 
 unique_post="This is a unique post"
 unique_comment="This is a unique comment on a random post"
@@ -25,9 +22,7 @@ unless Post.where(title: unique_post).exists?
       
 posts = Post.all
 
-
- 
- # Create Comments
+# Create Comments
 
 100.times do
    Comment.create!(
@@ -36,7 +31,6 @@ posts = Post.all
    )
  end
 
-
 unless Comment.where(body: unique_comment).exists?
   Comment.create!(
      post:  posts.sample,
@@ -44,9 +38,18 @@ unless Comment.where(body: unique_comment).exists?
    )
 end
 
- 
+#Create ad
+34.times do
+Advertisement.create!(
+     title:  "Awesome Ads",
+     copy:   "Which are so flippin' awesome!",
+     price:  2
+  )
+  end
+
+advertisements = Advertisement.all
+
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
-
 
