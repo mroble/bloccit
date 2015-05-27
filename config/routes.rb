@@ -1,4 +1,6 @@
 Bloccit::Application.routes.draw do
+  resources :advertisements
+
   get "welcome/index"
   get "welcome/about"
   get "welcome/contact"
