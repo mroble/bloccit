@@ -1,4 +1,4 @@
-class QuestionController < ApplicationController
+class QuestionsController < ApplicationController
   def index
     @questions = Question.all
   end
@@ -38,6 +38,7 @@ class QuestionController < ApplicationController
   end
 
   def destroy
+    @question = Question.find(params[:id])
   end
 
 end
