@@ -62,3 +62,5 @@ gem 'pry-rails', :group => :development
 #Install fake
 gem 'faker'
 
+#Install devise
+gem 'devise'
