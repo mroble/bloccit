@@ -48,6 +48,20 @@ Advertisement.create!(
 
 advertisements = Advertisement.all
 
+#Create questions
+37.times do
+Question.create!(
+     title:  "Questions?",
+     body:   "What is the meaning of life?",  
+  )
+  end
+
+questions = Question.all
+
+
+
+
+
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"

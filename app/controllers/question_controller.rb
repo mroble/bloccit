@@ -1,44 +1,43 @@
 class QuestionController < ApplicationController
   def index
-    @posts = Post.all
+    @questions = Question.all
   end
 
   def show
-    @post = Post.find(params[:id])
-  end
+    @question = Question.find(params[:id])
   end
 
   def new
-    @post = Post.new
+    @question = Question.new
   end
 
   def create
-     @post = Post.new(params.require(:post).permit(:title, :body))
-     if @post.save
+     @question = Question.new(params.require(:question).permit(:title, :body))
+     if @question.save
        flash[:notice] = "Question was saved."
-       redirect_to @post
+       redirect_to @question
      else
-       flash[:error] = "There was an error saving the post. Please try again."
+       flash[:error] = "There was an error saving the question. Please try again."
        render :new
      end
    end
-  end
 
   def edit
-    @post = Post.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   def update
-     @post = Post.find(params[:id])
-     if @post.update_attributes(params.require(:post).permit(:title, :body))
-       flash[:notice] = "Post was updated."
-       redirect_to @post
+     @question = Question.find(params[:id])
+     if @question.update_attributes(params.require(:question).permit(:title, :body))
+       flash[:notice] = "Question was updated."
+       redirect_to @question
      else
-       flash[:error] = "There was an error saving the post. Please try again."
+       flash[:error] = "There was an error saving the question. Please try again."
        render :edit
      end
   end
 
   def destroy
   end
+
 end
