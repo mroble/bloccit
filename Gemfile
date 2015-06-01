@@ -64,3 +64,6 @@ gem 'faker'
 
 #Install devise
 gem 'devise'
+
+#Install figaro
+ gem 'figaro', '1.0'
