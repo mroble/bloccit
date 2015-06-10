@@ -37,7 +37,8 @@ unique_comment="This is a unique comment on a random post"
 unless Post.where(title: unique_post).exists?
  Post.create!(
      title:  unique_post,
-     body:   "Which contains a unique message"
+     body:   "Which contains a unique message",
+     user: users.sample
    )
   end
       
@@ -90,6 +91,14 @@ questions = Question.all
    password: 'helloworld'
  )
 
+admin = User.new(
+  name: 'Admin User',
+  email: 'admin@example.com',
+  password: 'helloworld',
+  password_confirmation: 'helloworld')
+  admin.skip_confirmation!
+  admin.save
+  admin.update_attribute(:role, 'admin')
 
 
 
