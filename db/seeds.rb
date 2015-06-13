@@ -34,8 +34,6 @@ unique_comment="This is a unique comment on a random post"
  topics = Topic.all
 
 
-
-
  # Create Posts
  50.times do
    Post.create!(
@@ -45,6 +43,7 @@ unique_comment="This is a unique comment on a random post"
      body:   Faker::Lorem.paragraph
    )
  end
+
  posts = Post.all
 
 unless Post.where(title: unique_post).exists?
@@ -56,6 +55,17 @@ unless Post.where(title: unique_post).exists?
   end
       
 posts = Post.all
+
+#Create Summaries
+ #100.times do
+    #Summary.create!(
+    #post: posts.sample,
+     #body:  Faker::Lorem.paragraph
+   #)
+ #end
+
+ #summaries = Summary.all
+
 
 # Create Comments
 
@@ -94,9 +104,6 @@ Question.create!(
   end
 
 questions = Question.all
-
-
-
  
 
 admin = User.new(
