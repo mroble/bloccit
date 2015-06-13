@@ -12,7 +12,6 @@ end
 
   get 'about' => 'welcome#about'
   resources :advertisements
-  resources :posts
 
   get "welcome/index"
   get "welcome/about"
