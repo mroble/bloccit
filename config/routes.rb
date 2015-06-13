@@ -4,8 +4,9 @@ Bloccit::Application.routes.draw do
   resources :questions
   resources :topics do
   resources :posts, except: [:index]
-   end
-   resources :summaries
+  resources :summaries, except: [:index, :edit]
+
+end
 
   
 

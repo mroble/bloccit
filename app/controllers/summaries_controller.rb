@@ -1,16 +1,16 @@
 class SummariesController < ApplicationController
-  def index
-    @summaries = Summary.all
-    authorize @summaries
-  end
-
+  
   def new
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts
     @summary = Summary.new
     authorize @summary
   end
 
   def show
     @summary = Summary.find(params[:id])
+    @post = Post.find(params[:post_id])
+    @topic = Topic.find(params[:topic_id])
     authorize @summary
   end
 
@@ -20,6 +20,8 @@ class SummariesController < ApplicationController
   end
   
   def create
+     @topic = Topic.find(params[:topic_id])
+     @post = @topic.posts
      @summary = Summary.new(params.require(:summary).permit(:name, :description, :public))
      authorize @summary
      if @summary.save
