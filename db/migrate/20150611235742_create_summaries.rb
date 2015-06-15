@@ -4,6 +4,7 @@ class CreateSummaries < ActiveRecord::Migration
       t.string :name
       t.boolean :public, default:true
       t.text :description
+      t.references :post
 
       t.timestamps null: false
     end

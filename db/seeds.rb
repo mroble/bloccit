@@ -50,21 +50,22 @@ unless Post.where(title: unique_post).exists?
  Post.create!(
      title:  unique_post,
      body:   "Which contains a unique message",
-     user: users.sample
+     user: users.sample,
+     topic: topics.sample
    )
   end
       
 posts = Post.all
 
 #Create Summaries
- #100.times do
-    #Summary.create!(
-    #post: posts.sample,
-     #body:  Faker::Lorem.paragraph
-   #)
- #end
+ 100.times do
+    Summary.create!(
+    post: posts.sample,
+    description:  Faker::Lorem.paragraph
+   )
+ end
 
- #summaries = Summary.all
+ summaries = Summary.all
 
 
 # Create Comments
