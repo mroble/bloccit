@@ -70,4 +70,5 @@ gem 'devise'
 
  gem 'pundit'
 
+#Added in CP 43
  gem 'redcarpet'
