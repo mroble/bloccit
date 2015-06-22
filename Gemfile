@@ -72,3 +72,10 @@ gem 'devise'
 
 #Added in CP 43
  gem 'redcarpet'
+ 
+ gem 'carrierwave'
+
+ gem 'mini_magick'
+
+ gem 'fog'
+
