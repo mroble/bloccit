@@ -26,7 +26,7 @@ unique_comment="This is a unique comment on a random post"
  
  # Create Topics
  15.times do
-   Topic.create!(
+   Topic.create(
      name:         Faker::Lorem.sentence,
      description:  Faker::Lorem.paragraph
    )
@@ -51,7 +51,8 @@ unless Post.where(title: unique_post).exists?
  Post.create!(
      title:  unique_post,
      body:   "Which contains a unique message",
-     user: users.sample
+     user: users.sample,
+     topic: topics.sample
    )
   end
       
